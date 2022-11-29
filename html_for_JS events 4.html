@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(0, 0, 0, 0.98);
+            /*margin: 100px auto;*/
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<div id = "colorBlock"></div>
+<script>
+    // colorBlock.addEventListener("click", function () {
+    //     colorBlock.style.background =
+    //     "rgb(" +
+    //     Math.round(255*Math.random()) +
+    //     "," +
+    //     Math.round(255*Math.random()) +
+    //     "," +
+    //     Math.round(255*Math.random()) +
+    //     ")" ;
+    //
+    // })
+    let arr = ['red','orange','yellow','green','lightblue', 'blue','purple'];
+    let a=0;
+    for (let i = 0; i < arr.length; i++) {
+    colorBlock.addEventListener("click", function() {
+            switch (a) {
+                case(0):
+                    colorBlock.style.background = arr[0];
+                    break;
+                case(1):
+                    colorBlock.style.background = arr[1];
+                    break;
+                case(2):
+                    colorBlock.style.background = arr[2];
+                    break;
+                case(3):
+                    colorBlock.style.background = arr[3];
+                    break;
+                case(4):
+                    colorBlock.style.background = arr[4];
+                    break;
+                case(5):
+                    colorBlock.style.background = arr[5];
+                    break;
+                case(6):
+                    colorBlock.style.background = arr[6];
+                    break;
+            }
+            a++;
+        })
+    colorBlock.addEventListener("click");
+    }
+
+</script>
+</body>
+</html>

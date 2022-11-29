@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #quadro {
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(0, 0, 0, 0.98);
+            margin: 100px auto;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body onclick = "out.innerText='Push on: ' + event.target.nodeName; console.log(event)">
+
+<div id = quadro></div>
+
+<p id="out"></p>
+</body>
+</html>

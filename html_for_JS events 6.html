@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1 {
+            width: 300px;
+            height: 300px;
+            border: 5px solid rgba(41, 45, 117, 0.98);
+        }
+        #d2 {
+            width:100px;
+            height: 100px;
+            background: aqua;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Mouse enter / Mouse over</h1>
+<div id = "d1">
+    <div id="d2"></div>
+</div>
+<br>
+<span>Mouse enter</span> <span id="s1"></span> <br>
+<span>Mouse over</span> <span id="s2"></span>
+<script>
+    d1.onmouseenter = function() {
+        s1.innerText = 'Ram'
+        console.log('d1.onmouseenter')
+    }
+    d1.onmouseover = function() {
+        s2.innerText = 'Ram'
+        console.log('d1.onmouseover')
+    }
+    d2.onmouseenter = function() {
+        s1.innerText = 'Cube'
+        console.log('d2.onmouseenter')
+    }
+    d2.onmouseover = function() {
+        s2.innerText = 'Cube'
+        console.log('d2.onmouseover')
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1{
+            height: 200px;
+            width: 400px;
+            border: 10px solid turquoise;
+        }
+    </style>
+</head>
+<body>
+
+<div id="d1"></div>
+
+<script>
+d1.onmousedown = function (e) {
+    console.log(e)
+    let bgColor;
+    switch (e.which) {
+        case 1:
+            bgColor = 'red';
+            break;
+        case 2:
+            bgColor = 'aqua';
+            break;
+        case 3:
+            bgColor = 'blue';
+            break;
+    }
+    d1.style.background = bgColor;
+}
+document.oncontextmenu = function () {return false} //отключает контекстное меню во всем документе
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <style>
+        #quadro {
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(0, 0, 0, 0.98);
+            margin: 100px auto;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<!--<div id = quadro onclick="alert('Blue DIV were pushed')"></div>-->
+<div id = quadro></div>
+<!--<script> quadro.onclick=function(){-->
+<!--    alert('blue DIV were pushed')-->
+<!--}-->
+<!--</script>-->
+<script>
+    quadro.addEventListener('click', function () {alert('Blue DIV were pushed')})
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Press any key</h1>
+<h2 id="out"></h2>
+
+<script>
+  document.onkeydown = function (e) {
+    let txt = "";
+    console.log(e);
+    if(e.ctrlKey) txt += "Pushed Ctrl - ";
+    if(e.altKey) txt += "Pushed Alt - ";
+    if(e.shiftKey) txt += "Pushed Shift - ";
+    // if(e.metaKey) txt += "Pushed Command - ";
+    txt += e.key;
+    out.innerText = txt;
+    e.preventDefault(); //прекращается действие сочетания клавиш
+  }
+</script>
+</body>
+</html>

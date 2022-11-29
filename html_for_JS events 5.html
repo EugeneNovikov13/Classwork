@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin:0;
+        }
+        div {
+            width: 255px;
+            height: 255px;
+            border: 2px solid rgba(0, 0, 0, 0.98);
+        }
+    </style>
+</head>
+<body>
+
+<div id = "colorBlock"></div>
+<script>
+    colorBlock.addEventListener("mousemove",
+        function (e) {
+        colorBlock.style.background =
+        "rgb(255," +
+        e.pageX +
+        "," +
+        e.pageY +
+        ")"
+        })
+</script>
+</body>
+</html>

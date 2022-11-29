@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="reg">
+  <p><input name="user" value=""/>
+  <p><input name="sex" type="radio" checked/>M
+  <input type="radio" name="sex"/>F
+  <p>City:
+  <select name="city" multiple>
+      <option>Voronezh</option>
+      <option>Borisoglebsk</option>
+      <option>Povorino</option>
+  </select>
+  <fieldset name="info">
+    <p>Согласие <input type="checkbox" name="agree"></p>
+    <p><textarea name="about" cols="30" rows="10"></textarea></p>
+    <p><input type="submit" name="submit"></p>
+  </fieldset>
+</form>
+<script>
+    let frm =document.forms[0];
+    // let user = frm.user;
+    // let sex = frm.sex;
+    // let about = frm.about;
+    // console.log(user.value, sex[0].checked, about.value);
+
+    let city = frm.city;
+    // console.dir(city.options);
+    // console.log(city.value);
+    // console.log(city.selectedIndex);
+
+    city.options[1].selected = true;
+    city.options[2].selected = true;
+
+    let selected = Array.from(city.options).filter(option => option.selected)
+    for (let c of selected)
+        console.log(c);
+</script>
+
+</body>
+</html>

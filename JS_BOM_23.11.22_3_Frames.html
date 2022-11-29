@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        iframe {
+            border: 1px solid orange;
+            height: 200px;
+            margin: 30px;
+            width: 200px;
+        }
+        button {
+            margin: 10px 100px;
+        }
+    </style>
+</head>
+<body>
+<iframe src="about:blank"></iframe>
+<iframe src="about:blank"></iframe>
+<iframe src="about:blank" name="frame3"></iframe>
+
+<button onclick="window.frames[0].location='https://itstep.org/'">IT Step</button>
+<button onclick="window.frames[1].location='https://hashsum.ru/'">Hashsum</button>
+<button onclick="window.frames.frame3.location='https://pyneng.readthedocs.io/'">Pyneng</button>
+</body>
+</html>

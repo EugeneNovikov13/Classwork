@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #text, #text2 {
+            height: 200px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<textarea id="text"></textarea><br>
+<textarea id="text2"></textarea><br>
+<a href="https://github.com/EugeneNovikov13/Education">GitHub</a>
+
+<script>
+window.onbeforeunload =
+    function (e) {
+        if(text.value.length > 0 || text2.value.length > 0) {
+            // let msg = 'Text not saved'; //необязательное сообщение
+            // e.returnValue = msg;
+            // return msg;
+            return e.returnValue;
+        }
+        return null;
+    }
+</script>
+
+</body>
+</html>

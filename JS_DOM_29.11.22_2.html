@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="reg">
+    <p><input name="userName1" value="">
+    <p><input name="userLastname1" value="">
+    <p>Согласие<input type="checkbox" name="agree"></p>
+    <p><input type="submit" name="submit1" id="submit2">
+</form>
+<script>
+
+    let frm = document.forms.reg;
+    let username = frm.userName1;
+    let userLastname = frm.userLastname1;
+    submit2.addEventListener('click', function () {
+        alert(username.value + userLastname.value);
+    })
+
+</script>
+</body>
+</html>

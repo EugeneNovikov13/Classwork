@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div, p {
+        border: 3px solid greenyellow;
+        display: inline-block;
+        height: 60px;
+        width: 100px;
+        margin-left: 10px;
+        padding-top: 40px;
+        text-align: center;
+    }
+    button {
+        margin-left: 10px;
+        margin-top: 30px;
+        width: 100px;
+        height: 20px;
+    }
+</style>
+<body>
+    <div id="d1" class="c1" name="n1">d1, c1, n1</div>
+    <div id="d2" class="c2" name="n1">d2, c2, n1</div>
+    <div id="d3" class="c1 c2">d3, c1, c2</div>
+    <p id="p1" class="c1">p1, c1</p>
+    <p id="p2" class="c2" name="n1">p2, c2, n1</p>
+    <br>
+
+    <button onclick="selD1()">id = d1</button>
+    <button onclick="selC1()">class = c1</button>
+    <button onclick="selP()">tag = P</button>
+    <button onclick="selN1()">name = n1</button>
+    <button onclick="clr()">Clear</button>
+    <button onclick = "buttonChange()">ButtonChange</button>
+    <button onclick = "borderChange()">BorderChange</button>
+
+    <script>
+         function selD1() {
+            let elem = document.getElementById("d1");
+            elem.style.backgroundColor = "#cfc";
+         }
+         function selC1() {
+            let elems = document.getElementsByClassName("c1");
+            for(let elem of elems)
+                elem.style.backgroundColor = "#fcc";
+         }
+         function selP() {
+            let elems =
+            document.getElementsByTagName("p");
+            for(let elem of elems)
+                elem.style.backgroundColor = "#ccf";
+         }
+         function selN1() {
+            let elems =
+            document.getElementsByName("n1");
+            for(let elem of elems)
+                elem.style.backgroundColor = "#bef";
+         }
+         function clr() {
+            let elems = document.querySelectorAll("div,p");
+            for(let elem of elems)
+                elem.style.backgroundColor = "#eee";
+         }
+         function buttonChange() {
+             let elems = document.querySelectorAll('button');
+             for (let elem of elems)
+                 elem.style.background = 'green';
+         }
+         function borderChange() {
+             let elems = document.querySelectorAll('[name=n1]');
+             for (let elem of elems) {
+                 elem.style.borderColor = 'red';
+                 elem.style.borderStyle = 'dashed';
+             }
+         }
+    </script>
+
+</body>
+</html>
