@@ -1,0 +1,236 @@
+let template = /\D/
+undefined
+let template2 = new Regexp ('/D', 'g')
+VM198:1 Uncaught ReferenceError: Regexp is not defined
+    at <anonymous>:1:17
+(anonymous) @ VM198:1
+let template = /1/
+undefined
+template.test('123')
+true
+template.test('234')
+false
+template.test('I am 33 years old')
+false
+template.test('I am 13 years old')
+true
+template = /\D/
+/\D/
+template.test('I am 13 years old')
+true
+template.test('I am  years old')
+true
+template.test('234')
+false
+let i1 =/[12]/
+undefined
+i1.test('123')
+true
+i1.test('132')
+true
+let i2 = /[A-Z]/
+undefined
+i2.test('gjhfjhkj')
+false
+i2.test('gjhfGhkj')
+true
+i2 = /^[A-Z]/
+/^[A-Z]/
+i2.test('gjhfGhkj')
+false
+i2.test('gjhfGhkj')
+false
+i2.test('gjhfjhkj')
+false
+i2.test('123')
+false
+i2 = /^[A-Z]/g
+/^[A-Z]/g
+i2.test('gjhfGhkj')
+false
+i2.test('gjhfjhkj')
+false
+i4 =  /\d{7}/
+/\d{7}/
+i4.test('ghj1234567jjhj')
+true
+i4.test('ghj1234h567jjhj')
+false
+let i5 = /\^1/
+undefined
+i5.test('122334')
+false
+i5.test('4122334')
+false
+i5 = /^1/
+/^1/
+i5.test('4122334')
+false
+i5.test('122334')
+true
+i1 = /$4/
+/$4/
+i1.test('ghht4')
+false
+i1 = /^$4/
+/^$4/
+i1.test('ghht4')
+false
+i2=/^d/
+/^d/
+i2.test('dhjjjr')
+true
+i2.test('hhjjdjr')
+false
+i1 = /4$/
+/4$/
+i1.test('ghht4')
+true
+i1.test('4ghht')
+false
+i3= /^WW+^WWW/
+/^WW+^WWW/
+i3.test('WWyjhhj')
+false
+i3= /^WW+WWW/
+/^WW+WWW/
+i3.test('WWyjhhj')
+false
+i3= /^[WW+WWW]/
+/^[WW+WWW]/
+i3.test('WWyjhhj')
+true
+i3.test('hjjWWyjhhj')
+false
+i3= /^W{2,3}/
+/^W{2,3}/
+i3.test('WWyjhhj')
+true
+i3.test('gggWWyjhhj')
+false
+i3.test('WWWWyjhhj')
+true
+i3.test('WWWhWyjhhj')
+true
+i3.test('WWWhWyjhhj')
+true
+i3= /^[WW+WWW]/
+/^[WW+WWW]/
+i3.test('WWWWyjhhj')
+true
+i3= /^W{2-3}/
+/^W{2-3}/
+i3.test('WWWWyjhhj')
+false
+i1 = /\d+/
+/\d+/
+let str1 = '12hhj jbjb bbj 45 gggg33'
+undefined
+i1.test(str1)
+true
+i1.exec(str1)
+['12', index: 0, input: '12hhj jbjb bbj 45 gggg33', groups: undefined]0: "12"groups: undefinedindex: 0input: "12hhj jbjb bbj 45 gggg33"length: 1[[Prototype]]: Array(0)
+let str1 = '12hhj jb12jb bbj 45 g12ggg33'
+undefined
+i1.exec(str1)
+['12', index: 0, input: '12hhj jb12jb bbj 45 g12ggg33', groups: undefined]0: "12"groups: undefinedindex: 0input: "12hhj jb12jb bbj 45 g12ggg33"length: 1[[Prototype]]: Array(0)
+i1 = /\d+/g
+/\d+/g
+i1.exec(str1)
+['12', index: 0, input: '12hhj jb12jb bbj 45 g12ggg33', groups: undefined]
+i1.exec(str1)
+['12', index: 8, input: '12hhj jb12jb bbj 45 g12ggg33', groups: undefined]
+i1.exec(str1)
+['45', index: 17, input: '12hhj jb12jb bbj 45 g12ggg33', groups: undefined]
+i1.exec(str1)
+['12', index: 21, input: '12hhj jb12jb bbj 45 g12ggg33', groups: undefined]
+i1.exec(str1)
+['33', index: 26, input: '12hhj jb12jb bbj 45 g12ggg33', groups: undefined]
+i1.exec(str1)
+null
+str1.match(i1)
+(5) ['12', '12', '45', '12', '33']0: "12"1: "12"2: "45"3: "12"4: "33"length: 5[[Prototype]]: Array(0)
+str2 = '12-13-14'
+'12-13-14'
+str2.replace(/-/g, '$$$')
+'12$$13$$14'
+str2.replace(/-/g, '')
+'121314'
+str2.replace(/-/g, '$')
+'12$13$14'
+str2.replace(/-/g, '$$')
+'12$13$14'
+str2.replace(/-/g, '+++')
+'12+++13+++14'
+i1 = /\d/+/g
+VM2835:1 Uncaught SyntaxError: Invalid regular expression: missing /
+i1 = /[\d/+]/g
+/[\d/+]/g
+i1 = /[(]|[)]|[ ]/g
+/[(]|[)]|[ ]/g
+str1 = (7688) 60-45-67
+VM2980:1 Uncaught SyntaxError: Unexpected number
+str1 = '(7688) 60-45-67'
+'(7688) 60-45-67'
+str1.replace(i1)
+'undefined7688undefinedundefined60-45-67'
+str1.replace(i1,'')
+'768860-45-67'
+i1 = /[(]|[)]|[ ]|[-]/g
+/[(]|[)]|[ ]|[-]/g
+str1.replace(i1,'')
+'7688604567'
+i1 = /[(|)| |-]/g
+/[(|)| |-]/g
+str1.replace(i1,'')
+'7688604567'
+str1 = '(7688) 60-45-67'
+'(7688) 60-45-67'
+str1.replace(i1,'')
+'7688604567'
+str1 = '(7688)   60-45-67'
+'(7688)   60-45-67'
+str1.replace(i1,'')
+'7688604567'
+str1 = 'Krivov Dmitrii' 
+'Krivov Dmitrii'
+str2 = 'Krivov, Dmitrii'
+'Krivov, Dmitrii'
+let tm = /\W+/
+undefined
+str1.split(tm)
+(2) ['Krivov', 'Dmitrii']
+str2.split(tm)
+(2) ['Krivov', 'Dmitrii']
+let str3 = 'fjkgngnfkj  fdgdfg\\ hjbhbj12223 , , , ,gfg'
+undefined
+str3.split(tm)
+(4) ['fjkgngnfkj', 'fdgdfg', 'hjbhbj12223', 'gfg']
+let str4 = 'Ejklj kjkl jklj'
+undefined
+let str5 = 'hhhjklj kjkl jklj'
+undefined
+let str6 = 'hhhjGklj Gjkl GGHDF'
+undefined
+str4 = 'Yes kjkl jklj'
+'Yes kjkl jklj'
+let str5 = 'hhhjklj yes jklj'
+undefined
+let str6 = 'hhhjGklj Gjkl YES'
+undefined
+tm = /yes/
+/yes/
+tm.test(str4)
+false
+tm.test(str5)
+true
+tm.test(str6)
+false
+tm = /yes/i
+/yes/i
+tm.test(str4)
+true
+tm.test(str5)
+true
+tm.test(str6)
+true

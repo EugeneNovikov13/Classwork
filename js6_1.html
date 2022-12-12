@@ -15,12 +15,12 @@
 	</style>
 </head>
 <body>
-	<form method="GET" id="regForm" onsubmit="return checkForm()" >
+	<form method="POST" id="regForm" onsubmit="return checkForm()" >
 		<b>First name:</b>  <input type="text" id="name1" name="name1" required /><br/>
 		<b>Last name:</b> <input type="text" id="name2" name="name2" required /><br/>
 		<b>Login:</b> <input type="text" id="login" name="login" required /><br/>
-		<b>Password:</b> <input type="password" id="pas1" name="pass" required /><br/>
-		<b>Confirm password:</b> <input type="password" id="pas2" required /><br/>
+		<b>Password:</b> <input type="password" id="pass1" name="pass1" required /><br/>
+		<b>Confirm password:</b> <input type="password" id="pass2" required /><br/>
 		<b>Email:</b> <input type="email" id="email" name="email" required /><br/>
 		<b>Phone number:</b> <input type="phone" id="phone" name="phone" required /><br/>
 		<b>Code:</b> <input type="number" id="code" name="code" required /><br/>
@@ -30,8 +30,47 @@
 
 <script>
 function checkForm(){
-	    alert("Analyzing...");
-    return false;
+	let n1 = document.getElementById('name1').value;
+	let t1 = /^[A_Z][a-z]*(-[A-Z][a-z]*)*$/;
+	if (!t1.test(n1)) {
+		alert ('First name is incorrect');
+		return false;
+	}
+	let n2 = document.getElementById('name2').value;
+	if (!t1.test(n2)) {
+		alert ('Last name is incorrect');
+		return false;
+	}
+	let p1 = document.getElementById('pass1').value;
+	if (! /[A-Z]/.test(p1)) {
+		alert('Password has no big letters');
+		return false;
+	}
+	if (! /[a-z]/.test(p1)) {
+		alert('Password has no small digit');
+		return false;
+	}
+	let p2 =document.getElementById('pass2').value;
+	if (p1 !== p2) {
+		alert('Password mismatch');
+		return false;
+	}
+	let eMail = document.getElementById('email').value;
+	let te = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/;
+	if (!te.test(eMail)) {
+		alert('e-mail is incorrect');
+		return false;
+	}
+	let phone = document.getElementById('phone').value;
+	if (! /^\+?\d{6,12}$/.test(phone)) {
+		alert ('Phone number is incorrect');
+		return false;
+	}
+	let agree = document.getElementById('accept').value;
+	if (agree!=='on') {
+		alert ('You must agree with rules');
+		return false;
+	}
 }
 </script>
 </body>
